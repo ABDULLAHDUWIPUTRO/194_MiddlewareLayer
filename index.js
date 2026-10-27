@@ -45,3 +45,6 @@ function successResponse(res, message, data, status = 200) {
         error: null,
     })
 }
+
+function errorResponse(res, message, status, details = null) {
+    
