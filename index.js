@@ -94,18 +94,15 @@ function validateBody(schema) {
     }
 }
 
-function validateParams(schema) {
+//Middleware untuk validasi parameter id
+function validateIdParam(schema) {
     return (req, res, next) => {
-        const { error, value } = schema.validate(req.validateParams, {
-            abortEarly: false, 
-            convert: true, 
-            allowUnknown: false,
-        })
+        const { error, value } = schema.validate(req.params)
 
         if (error) {
             return errorResponse(
                 res,
-                'parameter tidak valid',
+                'Parameter tidak valid',
                 400,
                 error.details.map(item => ({
                     field: item.path.join('.'),
@@ -113,17 +110,8 @@ function validateParams(schema) {
                 }))
             )
         }
-        req.validateParams = value,
-            next()
+
+        req.params = value
+        next()
     }
 }
-
-//METHOD GET
-
-app.get(`/`, async (req, res) => {
-    const result = await pool.query(
-        `SELECT * FROM biodata ORDER BY id`
-    )
-
-    return successResponse(res, 'Data berhasil diambil', result.rows)
-})
