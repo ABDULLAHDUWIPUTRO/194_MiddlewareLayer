@@ -13,3 +13,6 @@ const pool = new Pool({
     password: 'Duwi2005',
     port: 5432,
 })
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
