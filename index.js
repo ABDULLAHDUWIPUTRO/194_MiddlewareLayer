@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 
 //RESPONE ENVELOPE
 
-function successResponse(res, meesage, data, status = 200) {
+function successResponse(res, message, data, status = 200) {
     return res.status(status).json({
         success: true,
         message,
