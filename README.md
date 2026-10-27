@@ -6,5 +6,6 @@ HASIL:
 
 <img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/8371a963-db12-4899-a258-a194a3ca0f94" />
 
-![Uploading image.png…]()
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/9759da26-a58d-4399-8ae2-448f2e99abaf" />
+
 
